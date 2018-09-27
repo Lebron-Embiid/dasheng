@@ -1,16 +1,6 @@
 <template>
 	<div id="home">
-		  <!-- <div class="banner">
-	      <img src="../assets/img/banner.jpg" class="ban_img">
-	      <img class="vip" @click="showVip" src="../assets/img/vip.png"></img>
-	    </div> -->
-      <!-- <app-banner :swipeList="swipeList" :vipShow="vip"></app-banner> -->
-      <div class="swipe_box">
-        <mt-swipe :auto="4000">
-          <mt-swipe-item v-for="(item,index) in swipeList" :key="index"><img :src="item.img"></mt-swipe-item>
-        </mt-swipe>
-        <img class="vip" @click="showVip" src="../assets/img/vip.png">
-      </div>
+      <app-banner :swipeList="swipeList" :vipShow="vip" @childToParent="showVip"></app-banner>
 	    <!-- 尊享vip -->
 	    <div class="vip_box" v-show="vipShow">
 	      <div class="container">
@@ -105,7 +95,7 @@ export default {
       iconList:[{
         icon: require("../assets/img/icon/service_icon1.png"),
         title: "咨询",
-        info: "遇到问题不知道怎么办？先到法律咨询开始"
+        info: "遇到法律问题不知怎么办？从咨询开始！"
       },{
         icon: require("../assets/img/icon/service_icon2.png"),
         title: "和解",
@@ -125,21 +115,18 @@ export default {
       },{
         icon: require("../assets/img/icon/service_icon6.png"),
         title: "文书",
-        info: "对方起诉您，我们是你坚强的守护神",
+        info: "规范严谨的法律文书，我们帮您搞定！",
       },{
         icon: require("../assets/img/icon/service_icon7.png"),
         title: "会员卡",
-        info: "对方起诉您，我们是你坚强的守护神",
+        info: "您的专属法律顾问！",
       }]
     }
   },
   methods:{
-  	showVip(){
-  		this.vipShow = !this.vipShow
-  	},
-    created(){
-      this.$emit("childToParent",this.vipShow)
-    }
+  	showVip(data){
+      this.vipShow = !this.vipShow
+  	}
   },
   components:{
     'app-banner':comBanner

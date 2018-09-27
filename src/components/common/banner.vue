@@ -3,7 +3,7 @@
 		<mt-swipe :auto="4000">
 		  <mt-swipe-item v-for="(item,index) in swipeList" :key="index"><img :src="item.img"></mt-swipe-item>
 		</mt-swipe>
-		<img class="vip" v-show="vipShow" :vip="vipShow" src="../../assets/img/vip.png"></img>
+		<img class="vip" v-show="vipShow" :vip="vipShow" @click="vipBtn" src="../../assets/img/vip.png">
 	</div>
 </template>
 
@@ -15,14 +15,19 @@ Vue.use(Swipe).use(SwipeItem)
 
 export default{
 	data(){
-		return{
+		return {
 
 		}
 	},
-    props:{
-	  	swipeList: Array,
-	  	vipShow: Boolean
+  props:{
+    swipeList: Array,
+    vipShow: Boolean
+  },
+  methods:{
+    vipBtn(){
+      this.$emit("childToParent",this.vipShow)
     }
+  }
 }
 </script>
 

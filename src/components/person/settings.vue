@@ -37,7 +37,8 @@
 					</li>
 					<li>
 						<span>所在城市：</span>
-						<input type="text" v-model="city" name="city">
+						<!-- <input type="text" v-model="city" name="city"> -->
+            <comAddress></comAddress>
 					</li>
 				</ul>
 				<button>保存</button>
@@ -49,6 +50,7 @@
 <script>
 import Vue from 'vue'
 import dsHeader from '@/components/header'
+import comAddress from '@/components/common/address'
 import AvatarCropper from "vue-avatar-cropper"
 
 export default{
@@ -69,7 +71,8 @@ export default{
 	},
 	components:{
 		dsHeader,
-		AvatarCropper
+    AvatarCropper,
+    comAddress
 	},
     methods: {
       handleUploaded(resp) {
@@ -156,4 +159,16 @@ export default{
 	/deep/ .avatar-cropper .avatar-cropper-container .avatar-cropper-footer .avatar-cropper-btn:hover{
 		background: #e74f5b;
 	}
+
+  /deep/ #address{
+    width: 75%;
+  }
+  /deep/ #address ul li{
+    border-radius: 0;
+		height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-color: #E5E5E5;
+  }
 </style>
