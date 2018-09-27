@@ -7,11 +7,11 @@
 				<h3>符律师</h3>
 				<h3>编号 — 5503</h3>
 				<div class="lawyer_year">
-					<div @click="$router.push('certify')"><h4>律师年审期限<span>至2019-08-19</span><img src="../../assets/img/icon/right1.png" height="31" width="17"></h4></div>
-					<div @click="$router.push('certify')"><h4>律师年审期限<span>至2019-08-19</span><img src="../../assets/img/icon/right1.png" height="31" width="17"></h4></div>
+					<div @click="$router.push('certify')"><h4>律师年审期限<span>至2019-08-19</span><img src="../../assets/img/icon/right1.png"></h4></div>
+					<div @click="$router.push('certify')"><h4>律师年审期限<span>至2019-08-19</span><img src="../../assets/img/icon/right1.png"></h4></div>
 				</div>
-				<router-link to="client">我的客户<img src="../../assets/img/icon/right2.png" alt=""></router-link>
-				<router-link to="advisory">我的咨询<img src="../../assets/img/icon/right2.png" alt=""></router-link>
+				<router-link to="/client">我的客户<img src="../../assets/img/icon/right2.png" alt=""></router-link>
+				<router-link to="/advisory">我的咨询<img src="../../assets/img/icon/right2.png" alt=""></router-link>
 			</div>
 			<div class="lawyer_order">
 				<router-link to="order">我的订单<img src="../../assets/img/icon/right2.png" alt=""></router-link>

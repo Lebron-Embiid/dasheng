@@ -173,10 +173,10 @@ export default {
   font-size: 20px;
 }
 .cell_box a{
-  color: #3e3e3e;    
+  color: #3e3e3e;
 }
 .cell_box a:hover{
-  color: #3598dc;    
+  color: #3598dc;
 }
 .mint-cell:last-child{
   background: none;

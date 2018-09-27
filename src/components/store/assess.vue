@@ -5,7 +5,7 @@
 			<div class="raise_item" v-for="(item,index) in raise_list" :key="index">
 				<div class="raise_head">
 					{{item.name}}
-					<img src="../../assets/img/icon/star3.png" v-for="i in item.starNum">
+					<img src="../../assets/img/icon/star3.png" v-for="(i,idx) in item.starNum" :key="idx">
 					<span>{{item.time}}</span>
 				</div>
 				<div class="raise_content">{{item.content}}</div>

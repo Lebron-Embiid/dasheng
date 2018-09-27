@@ -31,7 +31,7 @@
 					</div>
 					<div class="shop_right">
 						<p>已受理：{{item.nums}}件</p>
-						<p>好评度：<img src="../../assets/img/icon/star1.png" v-for="i in item.starNum" alt=""></p>
+						<p>好评度：<img src="../../assets/img/icon/star1.png" v-for="(i,idx) in item.starNum" :key="idx" alt=""></p>
 						<p>执业年限：{{item.year}}年</p>
 						<p>专业擅长：{{item.love}}</p>
 					</div>
@@ -49,7 +49,7 @@
 			</div>
 			<div class="legal">
 				<h3>法律文书</h3>
-				<div><router-link to="productDetail"><img src="../../assets/img/icon/book.jpg"><span>购买法律文书<i>价格：100元 ></i></span></router-link></div>
+				<div><router-link to="productDetail"><img src="../../assets/img/icon/book.jpg"><span>购买法律文书<i>价格：{{price}}元 ></i></span></router-link></div>
 			</div>
 		</div>
 	</div>
@@ -119,7 +119,8 @@ export default{
 				starNum: 5,
 				year:10,
 				love:"曾成功处理多起涉外非诉讼案件，熟知各类法律业务流程."
-			}]
+      }],
+      price:"100"
 		}
 	},
 	components:{

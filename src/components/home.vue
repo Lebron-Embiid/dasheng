@@ -9,7 +9,7 @@
         <mt-swipe :auto="4000">
           <mt-swipe-item v-for="(item,index) in swipeList" :key="index"><img :src="item.img"></mt-swipe-item>
         </mt-swipe>
-        <img class="vip" @click="showVip" src="../assets/img/vip.png"></img>
+        <img class="vip" @click="showVip" src="../assets/img/vip.png">
       </div>
 	    <!-- 尊享vip -->
 	    <div class="vip_box" v-show="vipShow">
@@ -25,7 +25,7 @@
 	        </div>
 	        <div class="cell_box">
 	          <h3>您的专属律师</h3>
-	          <img class="ls_head" :src="head_img"></img>
+	          <img class="ls_head" :src="head_img">
 	          <h4>主律师：{{head_name}}</h4>
 	          <ul>
 	            <li v-for="(item,index) in lsList" :key="index"><h5>{{item.info}}</h5><p><img :src="item.icon">{{item.num}}</p></li>
@@ -122,13 +122,24 @@ export default {
         icon: require("../assets/img/icon/service_icon5.png"),
         title: "应诉",
         info: "对方起诉您，我们是你坚强的守护神",
+      },{
+        icon: require("../assets/img/icon/service_icon6.png"),
+        title: "文书",
+        info: "对方起诉您，我们是你坚强的守护神",
+      },{
+        icon: require("../assets/img/icon/service_icon7.png"),
+        title: "会员卡",
+        info: "对方起诉您，我们是你坚强的守护神",
       }]
     }
   },
   methods:{
   	showVip(){
   		this.vipShow = !this.vipShow
-  	}
+  	},
+    created(){
+      this.$emit("childToParent",this.vipShow)
+    }
   },
   components:{
     'app-banner':comBanner
@@ -207,10 +218,10 @@ export default {
   }
 
   .cell_box a{
-    color: #3e3e3e;    
+    color: #3e3e3e;
   }
   .cell_box a:hover{
-    color: #3598dc;    
+    color: #3598dc;
   }
   .mint-cell:last-child{
     background: none;
@@ -326,8 +337,14 @@ export default {
   .service_box ul li:nth-child(4){
     background: #86d1e8;
   }
-  .service_box ul li:last-child{
+  .service_box ul li:nth-child(5){
     background: #8a93ca;
+  }
+  .service_box ul li:nth-child(6){
+    background: #f6b1c6;
+  }
+  .service_box ul li:last-child{
+    background: #f6ddb1;
   }
 
   .search_box{

@@ -11,33 +11,33 @@
 				      trigger="#pick-avatar"
 				      upload-url="" />
 		      	</div>
-				<h3>主律师：Alexander</h3>
+				<h3>主律师：{{idName}}</h3>
 			</div>
 			<div class="settings_info">
 				<ul>
 					<li>
 						<span>手机号码：</span>
-						<input type="text" name="phone">
+						<input type="text" v-model="phone" name="phone">
 					</li>
 					<li>
 						<span>姓名<i>*</i>：</span>
-						<input type="text" name="username">
+						<input type="text" v-model="username" name="username">
 					</li>
 					<li>
 						<span>微信：</span>
-						<input type="text" name="weixin">
+						<input type="text" v-model="weixin" name="weixin">
 					</li>
 					<li>
 						<span>Q Q：</span>
-						<input type="text" name="qq">
+						<input type="text" v-model="qq" name="qq">
 					</li>
 					<li>
 						<span>邮箱：</span>
-						<input type="text" name="email">
+						<input type="text" v-model="email" name="email">
 					</li>
 					<li>
 						<span>所在城市：</span>
-						<input type="text" name="city">
+						<input type="text" v-model="city" name="city">
 					</li>
 				</ul>
 				<button>保存</button>
@@ -57,7 +57,14 @@ export default{
 			headerTitle: "设置",
 			backshow: true,
 			show: false,
-			userAvatar: require("../../assets/img/ls_head.png")
+      userAvatar: require("../../assets/img/ls_head.png"),
+      idName:"Alexander",
+      phone:"",
+      username:"",
+      weixin:"",
+      qq:"",
+      email:"",
+      city:""
 		}
 	},
 	components:{

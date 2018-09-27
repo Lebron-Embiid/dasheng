@@ -4,7 +4,7 @@
 		<app-banner :swipeList="swipeList" :vipShow="vip"></app-banner>
 		<div class="collect_box">
 			<div class="left">
-				<h4>¥10.00</h4>
+				<h4>¥{{price}}</h4>
 				<p>咨询服务</p>
 			</div>
 			<div class="right">
@@ -29,7 +29,7 @@
 		<div class="select_service">
 			<div class="left">服务地址</div>
 			<div class="right">
-				深圳市南山区学府路118号7层  某律师事务所
+				{{address}}
 			</div>
 		</div>
 		<div class="select_service">
@@ -40,7 +40,7 @@
 				<div class="raise_item" v-for="(item,index) in raise_list" :key="index">
 					<div class="raise_head">
 						{{item.name}}
-						<img src="../../assets/img/icon/star3.png" v-for="i in item.starNum">
+						<img src="../../assets/img/icon/star3.png" v-for="(i,idx) in item.starNum" :key="idx">
 						<span>{{item.time}}</span>
 					</div>
 					<div class="raise_content">{{item.content}}</div>
@@ -57,11 +57,11 @@
 				<h3>VIP 服务介绍</h3>
 				<ul>
 					<li>
-						<img src="../../assets/img/vip_card1.jpg">
+						<img src="../../assets/img/vip_card1.jpg" alt="">
 						<button class="active">已购买</button>
 					</li>
 					<li>
-						<img src="../../assets/img/vip_card2.jpg">
+						<img src="../../assets/img/vip_card2.jpg" alt="">
 						<button>点击购买</button>
 					</li>
 				</ul>
@@ -111,7 +111,9 @@ export default{
 				time:"2018-08-17",
 				content:"通过偶然的机会接触到企法优途，专业的态度、高效的服务、强大的团队让我最终在众多律所中选择了它作为公司的法律顾问，给我专业的法律建议，大大降低了公司经营过程中出现的法律风险。"
 			}],
-			vip_popup: false
+      vip_popup: false,
+      price:"10.00",
+      address:"深圳市南山区学府路118号7层  某律师事务所"
 		}
 	},
 	components:{
@@ -295,7 +297,7 @@ export default{
 		font-size: 20px;
 		line-height: 1.5;
 	}
-	
+
 	.see_more{
 		text-align: center;
 	}
@@ -308,7 +310,7 @@ export default{
 		border-radius: 10px;
 	}
 
-	
+
 
 	/deep/ .mint-popup-bottom{
 		width: 100%;
@@ -341,7 +343,7 @@ export default{
 	}
 	.vip_box ul li:last-child{
 		background: url(../../assets/img/vip_bg2.jpg) center center no-repeat;
-		background-size: 100% 100%;		
+		background-size: 100% 100%;
 	}
 	.vip_box ul li img{
 		display: block;

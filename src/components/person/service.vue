@@ -5,7 +5,7 @@
 			<div class="service_item" v-for="(item,index) in serviceList" :key="index">
 				<h3>{{item.title}}</h3>
 				<ul>
-					<li v-for="order in item.list">{{order.name}}<span>{{order.time}}</span></li>
+					<li v-for="(order,index) in item.list" :key="index">{{order.name}}<span>{{order.time}}</span></li>
 				</ul>
 			</div>
 		</div>
@@ -105,7 +105,7 @@ export default{
 		float: right;
 	}
 	.service_bottom ul li:hover{
-		background: #169bd5;		
+		background: #169bd5;
 	}
 	.service_bottom ul li a{
 		height: 120px;

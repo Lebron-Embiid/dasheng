@@ -9,9 +9,9 @@
 		      v-show="iShow"
 		      @chooseImages='bindtap_chooseImages'
 		    />
-	    	<img :src="image.src" v-for="(image , i) in images" @click="bingtap_preview(i)" alt="">
+	    	<img :src="image.src" v-for="(image , i) in images" :key="i" @click="bingtap_preview(i)" alt="">
 	    </div>
-		
+
 		<!-- 图片预览 -->
 	    <image-preview
 	      style="z-index:200"

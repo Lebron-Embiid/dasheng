@@ -9,13 +9,13 @@
 		</div>
 		<div class="select_nav">
 			<ul class="navs">
-				<li v-for="(item,index) in navList" @click="showChild(index)">
+				<li v-for="(item,index) in navList" :key="index" @click="showChild(index)">
 					<a href="javascript:void(0);">
 						{{item.nav}}
 						<img src="../../assets/img/icon/down1.png">
 					</a>
 					<ul v-show="item.show">
-						<li v-for="(val,idx) in item.child" @click.stop="selectChild(index,idx)">{{val}}</li>
+						<li v-for="(val,idx) in item.child" :key="idx" @click.stop="selectChild(index,idx)">{{val}}</li>
 					</ul>
 				</li>
 			</ul>
@@ -31,7 +31,7 @@
 						</div>
 						<div class="shop_right">
 							<p>已受理：{{item.nums}}件</p>
-							<p>好评度：<img src="../../assets/img/icon/star1.png" v-for="i in item.starNum" alt=""></p>
+							<p>好评度：<img src="../../assets/img/icon/star1.png" v-for="(i,ix) in item.starNum" :key="ix" alt=""></p>
 							<p>执业年限：{{item.year}}年</p>
 							<p>专业擅长：{{item.love}}</p>
 						</div>

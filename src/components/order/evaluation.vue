@@ -5,7 +5,7 @@
 			<div class="rate_box">
 				<span>店铺评分</span>
 				<ul class="star">
-					<li v-for="(itemClass,index) in itemClasses" :class="itemClass" class="star-item" @click="stars(index)" track-by="index"></li>
+					<li v-for="(itemClass,index) in itemClasses" :key="index" :class="itemClass" class="star-item" @click="stars(index)" track-by="index"></li>
 				</ul>
 			</div>
 			<div class="area_box">
@@ -16,7 +16,7 @@
 		<div class="buy_box">
 			<a href="javascript:void(0);" @click="toSubmit">发布</a>
 		</div>
-		<router-link to="Chat" class="customer_service"><img src="../../assets/img/service_ad.png"></router-link>
+		<router-link to="/Chat" class="customer_service"><img src="../../assets/img/service_ad.png"></router-link>
 	</div>
 </template>
 
@@ -53,7 +53,7 @@ export default{
 			}
 			if(hasDecimal){ // 非整数星星使用half
 				result.push("half"); // 类似
-			} 
+			}
 			while(result.length < 5){// 余下的用无星星补全,使用off
 				result.push("off");
 			}
@@ -81,7 +81,7 @@ export default{
 		padding: 88px 0 108px;
 	}
 	#eval #header{
-		border-bottom: 2px solid #EBEBEB;		
+		border-bottom: 2px solid #EBEBEB;
 	}
 	.eval_box{
 		overflow: hidden;
@@ -114,7 +114,7 @@ export default{
 	}
 	.star-item.on{
 		background: url(../../assets/img/icon/rate_on.png) center center no-repeat;
-		background-size: 100%;		
+		background-size: 100%;
 	}
 
 	.area_box{
@@ -156,7 +156,7 @@ export default{
 	}
 
 
-	
+
 	/deep/ .mint-msgbox-confirm{
 	    color: #e74f5b;
 	  }

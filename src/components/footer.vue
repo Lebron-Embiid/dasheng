@@ -44,13 +44,13 @@
 	            // 这里就可以通过 val 的值变更来确定去向
 	            switch(val){
 	                case 'index':
-	                    this.$router.push('/');
+	                    this.$router.replace('/');
 	                break;
 	                case 'store':
-	                    this.$router.push('/store');
+	                    this.$router.replace('/store');
 	                break;
 	                case 'person':
-	                    this.$router.push('/person');
+	                    this.$router.replace('/person');
 	                break;
 	            }
 	        }

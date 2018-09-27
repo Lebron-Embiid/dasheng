@@ -106,10 +106,6 @@
 					<h3>事件描述</h3>
 					<textarea name="desc" v-model="other_desc" placeholder="如果还有上面选中中不包含的证据，请填写。"></textarea>
 				</div>
-				<div class="footer_query">
-					<div class="footer_left">¥{{price}}</div>
-					<div class="footer_right"><router-link to="">提交订单</router-link></div>
-				</div>
 			</div>
 		  </mt-tab-container-item>
 		  <mt-tab-container-item id="tab2">
@@ -149,7 +145,7 @@
 								<h3>合同</h3>
 								<h3>委托书</h3>
 								<p>起诉状、财产保全申请书、财产保全担保书、证据自录</p>
-								<img-upload></img-upload>								
+								<img-upload></img-upload>
 								<div class="process_btn">
 									<span v-for="(item,index) in processTills3" :key="index" @click="clickTill3(index)">{{item.till_info}} <img src="../../assets/img/icon/till.png" v-if="item.till_show"><img src="../../assets/img/icon/project_icon3.png" v-else></span>
 								</div>
@@ -190,7 +186,7 @@
 								<h2>案件信息</h2>
 								<h3>合同</h3>
 								<h3>委托书</h3>
-								<p>起诉状、财产保全申请书、财产保全担保书、证据自录</p>						
+								<p>起诉状、财产保全申请书、财产保全担保书、证据自录</p>
 								<div class="process_btn">
 									<span v-for="(item,index) in processTills6" :key="index" @click="clickTill6(index)">{{item.till_info}} <img src="../../assets/img/icon/till.png" v-if="item.till_show"><img src="../../assets/img/icon/project_icon3.png" v-else></span>
 								</div>
@@ -205,7 +201,7 @@
 								<h3>受理通知</h3>
 								<h3>受理通知</h3>
 								<p>提交材料清单、证据目录</p>
-								<p>消费期限告知书、诉讼费缴纳期限<span>2019-08-17</span></p>				
+								<p>消费期限告知书、诉讼费缴纳期限<span>2019-08-17</span></p>
 								<div class="process_btn">
 									<span v-for="(item,index) in processTills7" :key="index" @click="clickTill7(index)">{{item.till_info}} <img src="../../assets/img/icon/till.png" v-if="item.till_show"><img src="../../assets/img/icon/project_icon3.png" v-else></span>
 								</div>
@@ -232,6 +228,10 @@
 			</div>
 		  </mt-tab-container-item>
 		</mt-tab-container>
+    <div class="footer_query">
+      <div class="footer_left">¥{{price}}</div>
+      <div class="footer_right"><router-link to="">提交订单</router-link></div>
+    </div>
 		<router-link to="Chat" class="customer_service"><img src="../../assets/img/service_ad.png"></router-link>
 	</div>
 </template>
@@ -376,52 +376,52 @@ export default{
 
       		processTills1:[{
 	      		till_info:"客户确认",
-	      		till_show: true	
+	      		till_show: true
       		},{
 	      		till_info:"客户确认",
-	      		till_show: true	
+	      		till_show: true
       		}],
       		processTills2:[{
 	      		till_info:"客户确认",
-	      		till_show: true	
+	      		till_show: true
       		},{
 	      		till_info:"客户确认",
-	      		till_show: true	
+	      		till_show: true
       		}],
       		processTills3:[{
 	      		till_info:"客户确认",
-	      		till_show: true	
+	      		till_show: true
       		},{
 	      		till_info:"客户确认",
-	      		till_show: true	
+	      		till_show: true
       		}],
       		processTills4:[{
 	      		till_info:"客户确认",
-	      		till_show: true	
+	      		till_show: true
       		},{
 	      		till_info:"客户确认",
-	      		till_show: true	
+	      		till_show: true
       		}],
       		processTills5:[{
 	      		till_info:"客户确认",
-	      		till_show: true	
+	      		till_show: true
       		},{
 	      		till_info:"客户确认",
-	      		till_show: true	
+	      		till_show: true
       		}],
       		processTills6:[{
 	      		till_info:"客户确认",
-	      		till_show: true	
+	      		till_show: true
       		},{
 	      		till_info:"客户确认",
-	      		till_show: true	
+	      		till_show: true
       		}],
       		processTills7:[{
 	      		till_info:"客户确认",
-	      		till_show: true	
+	      		till_show: true
       		},{
 	      		till_info:"客户确认",
-	      		till_show: true	
+	      		till_show: true
       		}]
 		}
 	},
@@ -552,7 +552,7 @@ export default{
 		font-size: 24px;
 		margin-top: 10px;
 	}
-	
+
 	/deep/ .mint-navbar{
 		border-bottom: 1px solid #DADADB;
 	}
@@ -720,7 +720,7 @@ export default{
 		padding: 40px 30px 0 55px;
 	}
 	.tab2_info ul{
-		border-left: 1px solid #E5E5E5;		
+		border-left: 1px solid #E5E5E5;
 	}
 	.process_box{
 		/*overflow: hidden;*/
@@ -728,7 +728,7 @@ export default{
 		position: relative;
 	}
 	.process_box.active{
-		border-left: 2px solid #4CAE48;		
+		border-left: 2px solid #4CAE48;
 	}
 	.process_box .icon{
 		position: absolute;

@@ -3,7 +3,7 @@
 		<mt-swipe :auto="4000">
 		  <mt-swipe-item v-for="(item,index) in swipeList" :key="index"><img :src="item.img"></mt-swipe-item>
 		</mt-swipe>
-		<img class="vip" v-show="vipShow" :vip="vipShow" @vipHidden="showVip" src="../../assets/img/vip.png"></img>
+		<img class="vip" v-show="vipShow" :vip="vipShow" src="../../assets/img/vip.png"></img>
 	</div>
 </template>
 
@@ -12,7 +12,7 @@ import Vue from 'vue'
 import dsHeader from '@/components/header'
 import { Swipe, SwipeItem } from 'mint-ui'
 Vue.use(Swipe).use(SwipeItem)
-	
+
 export default{
 	data(){
 		return{
@@ -22,11 +22,6 @@ export default{
     props:{
 	  	swipeList: Array,
 	  	vipShow: Boolean
-    },
-    methods:{
-    	showVip(data){
-    		console.log(data)
-    	}
     }
 }
 </script>
