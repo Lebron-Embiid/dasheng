@@ -2,40 +2,42 @@
 	<div id="home">
       <app-banner :swipeList="swipeList" :vipShow="vip" @childToParent="showVip"></app-banner>
 	    <!-- 尊享vip -->
-	    <div class="vip_box" v-show="vipShow">
-	      <div class="container">
-	        <div class="cell_box">
-	          <h3>服务中的项目<span>More <img src="../assets/img/icon/down.png"></span></h3>
-          	  <router-link to="eOrder" v-for="(item,index) in cellLists" :key="index">
-		          <mt-cell :title="item.title">
-	            	<span>{{item.date}}</span>
-		            <img slot="icon" :src="item.img">
-		          </mt-cell>
-	          </router-link>
-	        </div>
-	        <div class="cell_box">
-	          <h3>您的专属律师</h3>
-	          <img class="ls_head" :src="head_img">
-	          <h4>主律师：{{head_name}}</h4>
-	          <ul>
-	            <li v-for="(item,index) in lsList" :key="index"><h5>{{item.info}}</h5><p><img :src="item.icon">{{item.num}}</p></li>
-	          </ul>
-	        </div>
-	      </div>
-	    </div>
+      <transition name="fade">
+        <div class="vip_box" v-show="vipShow">
+          <div class="container">
+            <div class="cell_box">
+              <h3>服务中的项目<span>More <img src="../assets/img/icon/down.png"></span></h3>
+                <router-link to="/eOrder" v-for="(item,index) in cellLists" :key="index">
+                <mt-cell :title="item.title">
+                  <span>{{item.date}}</span>
+                  <img slot="icon" :src="item.img">
+                </mt-cell>
+              </router-link>
+            </div>
+            <div class="cell_box">
+              <h3>您的专属律师</h3>
+              <img class="ls_head" :src="head_img">
+              <h4>主律师：{{head_name}}</h4>
+              <ul>
+                <li v-for="(item,index) in lsList" :key="index"><h5>{{item.info}}</h5><p><img :src="item.icon">{{item.num}}</p></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </transition>
 	    <!-- 我们的提供服务 -->
 	    <div class="service_box">
 	      <h3>我们的提供服务</h3>
 	      <ul>
-	        <li v-for="(item,index) in iconList" :key="index"><router-link to="search"><h4><img :src="item.icon">{{item.title}}</h4><p>{{item.info}}</p></router-link></li>
+	        <li v-for="(item,index) in iconList" :key="index"><router-link :to="{name:'Search',params:{id:item.id}}"><h4><img :src="item.icon">{{item.title}}</h4><p>{{item.info}}</p></router-link></li>
 	      </ul>
 	      <form class="search_box">
-	        <div><img src="../assets/img/icon/search.png"><input type="text" @focus="$router.push('store')" name="search" placeholder="搜律所，律师" autocomplete="off"></div>
+	        <div><img src="../assets/img/icon/search.png"><input type="text" @focus="$router.push('/store')" name="search" placeholder="搜律所，律师" autocomplete="off"></div>
 	      </form>
 	    </div>
 	    <!-- 底部文字 -->
 	    <div class="footer_words">
-	      <h5>还不清楚需要哪个服务？请使用<router-link to="chat">在线客服</router-link>。</h5>
+	      <h5>还不清楚需要哪个服务？请使用<router-link to="/chat">在线客服</router-link>。</h5>
 	      <h3>大胜法宝</h3>
 	      <p>让每个法律纠纷，都获得律师帮助</p>
 	    </div>
@@ -45,7 +47,7 @@
 <script>
 import Vue from 'vue'
 import comBanner from '@/components/common/banner'
-import { Tabbar, TabItem,TabContainer, TabContainerItem, Cell  } from 'mint-ui'
+import { Tabbar, TabItem, TabContainer, TabContainerItem, Cell  } from 'mint-ui'
 Vue.use(Tabbar).use(TabItem).use(TabContainer).use(TabContainerItem).use(Cell)
 
 export default {
@@ -93,30 +95,37 @@ export default {
         num: 888
       }],
       iconList:[{
+        id: 1,
         icon: require("../assets/img/icon/service_icon1.png"),
         title: "咨询",
         info: "遇到法律问题不知怎么办？从咨询开始！"
       },{
+        id: 2,
         icon: require("../assets/img/icon/service_icon2.png"),
         title: "和解",
         info: "遇到纠纷，我们帮您快速调节"
       },{
+        id: 3,
         icon: require("../assets/img/icon/service_icon3.png"),
         title: "起诉",
         info: "打官司，找我们帮您排忧解难"
       },{
+        id: 4,
         icon: require("../assets/img/icon/service_icon4.png"),
         title: "执行",
         info: "遇到老赖，我们帮您维权"
       },{
+        id: 5,
         icon: require("../assets/img/icon/service_icon5.png"),
         title: "应诉",
         info: "对方起诉您，我们是你坚强的守护神",
       },{
+        id: 6,
         icon: require("../assets/img/icon/service_icon6.png"),
         title: "文书",
         info: "规范严谨的法律文书，我们帮您搞定！",
       },{
+        id: 7,
         icon: require("../assets/img/icon/service_icon7.png"),
         title: "会员卡",
         info: "您的专属法律顾问！",
@@ -137,6 +146,12 @@ export default {
 <style scoped>
   .banner{
     position: relative;
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
   }
   .banner .ban_img{
     display: block;

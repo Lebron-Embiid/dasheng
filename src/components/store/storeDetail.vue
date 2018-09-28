@@ -38,18 +38,18 @@
 				</div>
 				<div class="shop_bottom">
 					<ul>
-						<li><router-link to="productDetail"><img src="../../assets/img/icon/show_icon1.png"><p>咨询</p></router-link></li>
-						<li><router-link to="productDetail"><img src="../../assets/img/icon/show_icon2.png"><p>和解</p></router-link></li>
-						<li><router-link to="productDetail"><img src="../../assets/img/icon/show_icon3.png"><p>起诉</p></router-link></li>
-						<li><router-link to="productDetail"><img src="../../assets/img/icon/show_icon4.png"><p>执行</p></router-link></li>
-						<li><router-link to="productDetail"><img src="../../assets/img/icon/show_icon5.png"><p>应诉</p></router-link></li>
-						<li><router-link to="productDetail"><img src="../../assets/img/icon/show_icon6.png"><p>会员卡</p></router-link></li>
+						<li><router-link to="/productDetail/1"><img src="../../assets/img/icon/show_icon1.png"><p>咨询</p></router-link></li>
+						<li><router-link to="/productDetail/2"><img src="../../assets/img/icon/show_icon2.png"><p>和解</p></router-link></li>
+						<li><router-link to="/productDetail/3"><img src="../../assets/img/icon/show_icon3.png"><p>起诉</p></router-link></li>
+						<li><router-link to="/productDetail/4"><img src="../../assets/img/icon/show_icon4.png"><p>执行</p></router-link></li>
+						<li><router-link to="/productDetail/5"><img src="../../assets/img/icon/show_icon5.png"><p>应诉</p></router-link></li>
+						<li><router-link to="/productDetail/6"><img src="../../assets/img/icon/show_icon6.png"><p>会员卡</p></router-link></li>
 					</ul>
 				</div>
 			</div>
 			<div class="legal">
 				<h3>法律文书</h3>
-				<div><router-link to="productDetail"><img src="../../assets/img/icon/book.jpg"><span>购买法律文书<i>价格：{{price}}元 ></i></span></router-link></div>
+				<div><router-link to="/productDetail/7"><img src="../../assets/img/icon/book.jpg"><span>购买法律文书<i>价格：{{price}}元 ></i></span></router-link></div>
 			</div>
 		</div>
 	</div>

@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
+    <transition :name="transitionName">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -9,13 +11,49 @@ export default {
   name: 'App',
   data(){
     return{
-
+      transitionName:''
+    }
+  },
+  watch: {//使用watch 监听$router的变化
+    $route(to, from) {
+      //如果to索引大于from索引,判断为前进状态,反之则为后退状态
+      if(to.meta.index > from.meta.index){
+        //设置动画名称
+        this.transitionName = 'slide-left';
+      }else{
+        this.transitionName = 'slide-right';
+      }
     }
   }
 }
 </script>
 
 <style>
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: transform .4s ease;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding-top: 88px;
+  box-sizing: border-box;
+  top: 0;
+}
+.slide-right-enter {
+  transform: translate3d(-100%, 0, 0);
+}
+.slide-right-leave-active {
+  transform: translate3d(100%, 0, 0);
+}
+.slide-left-enter {
+  transform: translate3d(100%, 0, 0);
+}
+.slide-left-leave-active {
+  transform: translate3d(-100%, 0, 0);
+}
+
 #app {
   font-family: PingFang SC,'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -48,7 +86,7 @@ input,button{
   background: none;
   color: #7b7b7b;
   font-size: 26px;
-  outline: none;  
+  outline: none;
 }
 textarea{
   resize: none;
@@ -56,7 +94,7 @@ textarea{
 }
 
 #header{
-  border-bottom: 2px solid #EBEBEB;   
+  border-bottom: 2px solid #EBEBEB;
 }
 .swipe_box{
   height: 300px;

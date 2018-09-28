@@ -7,14 +7,14 @@
 				<h3>符律师</h3>
 				<h3>编号 — 5503</h3>
 				<div class="lawyer_year">
-					<div @click="$router.push('certify')"><h4>律师年审期限<span>至2019-08-19</span><img src="../../assets/img/icon/right1.png"></h4></div>
-					<div @click="$router.push('certify')"><h4>律师年审期限<span>至2019-08-19</span><img src="../../assets/img/icon/right1.png"></h4></div>
+					<div @click="$router.push('/certify')"><h4>律师年审期限<span>至2019-08-19</span><img src="../../assets/img/icon/right1.png"></h4></div>
+					<div @click="$router.push('/certify')"><h4>律师年审期限<span>至2019-08-19</span><img src="../../assets/img/icon/right1.png"></h4></div>
 				</div>
 				<router-link to="/client">我的客户<img src="../../assets/img/icon/right2.png" alt=""></router-link>
 				<router-link to="/advisory">我的咨询<img src="../../assets/img/icon/right2.png" alt=""></router-link>
 			</div>
 			<div class="lawyer_order">
-				<router-link to="order">我的订单<img src="../../assets/img/icon/right2.png" alt=""></router-link>
+				<router-link to="/order">我的订单<img src="../../assets/img/icon/right2.png" alt=""></router-link>
 				<ul class="order_ul">
 					<li v-for="(item,index) in orderList" :key="index"><img :src="item.icon"><p>{{item.title}}<span>{{item.status}}</span><span>{{item.time}}</span></p></li>
 				</ul>
@@ -28,7 +28,7 @@
 			</div>
 			<div class="lawyer_shop">
 				<h3><span>我的店铺</span></h3>
-				<router-link to="shop" v-if="noShop">申请店铺<img src="../../assets/img/icon/right2.png" alt=""></router-link>
+				<router-link to="/shop" v-if="noShop">申请店铺<img src="../../assets/img/icon/right2.png" alt=""></router-link>
 				<div class="shop_box" v-else>
 					<lawyer-item :list="lawyer_list"></lawyer-item>
 				</div>

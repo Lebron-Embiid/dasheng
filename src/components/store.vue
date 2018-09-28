@@ -121,6 +121,9 @@ export default{
 		background: #169bd5;
 		padding: 15px 0;
 	}
+  .search_box .sright:active{
+    opacity: .8;
+  }
 	.search_box .sright img{
 		display: block;
 		width: 32px;

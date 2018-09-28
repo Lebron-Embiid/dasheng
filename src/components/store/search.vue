@@ -22,7 +22,7 @@
 		</div>
 		<div class="filter_box">
 			<div class="filter_item">
-				<div class="shop_item" @click="$router.push('productDetail')" v-for="(item,index) in lawyer_list" :key="index">
+				<div class="shop_item" @click="toProDetail" v-for="(item,index) in lawyer_list" :key="index">
 					<div class="shop_top">
 						<div class="shop_left">
 							<img src="../../assets/img/store_head.png">
@@ -93,7 +93,10 @@ export default{
 				love:"曾成功处理多起涉外非诉讼案件，熟知各类法律业务流程."
 			}]
 		}
-	},
+  },
+  created(){
+    console.log(this.$route.params.id)
+  },
 	methods:{
 		showChild(index){
 			for(var i=0;i<this.navList.length;i++){
@@ -104,7 +107,10 @@ export default{
 		selectChild(index,idx){
 			this.navList[index].nav = this.navList[index].child[idx]
 			this.navList[index].show = false
-		}
+    },
+    toProDetail(){
+      this.$router.push('/productDetail/'+this.$route.params.id)
+    }
 	}
 }
 </script>
@@ -159,6 +165,9 @@ export default{
 		height: 32px;
 		margin: 0 auto;
 	}
+  .search_box .sright:active{
+    opacity: .8;
+  }
 
 	.navs{
 		border: 1px solid #EAEAEA;

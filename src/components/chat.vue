@@ -67,7 +67,7 @@ export default{
 		padding: 88px 0 108px;
 	}
 	#store #header{
-		border-bottom: 2px solid #EBEBEB;		
+		border-bottom: 2px solid #EBEBEB;
 	}
 	.chat_box{
 		overflow: hidden;
@@ -189,6 +189,9 @@ export default{
 		align-items: center;
 		justify-content: center;
 	}
+  .btn_box:active{
+    opacity: .8;
+  }
 	.btn_box img{
 		display: block;
 		width: 48px;

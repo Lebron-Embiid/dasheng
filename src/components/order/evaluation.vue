@@ -16,7 +16,7 @@
 		<div class="buy_box">
 			<a href="javascript:void(0);" @click="toSubmit">发布</a>
 		</div>
-		<router-link to="/Chat" class="customer_service"><img src="../../assets/img/service_ad.png"></router-link>
+		<router-link to="/chat" class="customer_service"><img src="../../assets/img/service_ad.png"></router-link>
 	</div>
 </template>
 

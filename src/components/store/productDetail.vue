@@ -51,7 +51,7 @@
 		<div class="buy_box">
 			<router-link to="/eOrder">我要购买</router-link>
 		</div>
-		<router-link to="Chat" class="customer_service"><img src="../../assets/img/service_ad.png"></router-link>
+		<router-link to="/chat" class="customer_service"><img src="../../assets/img/service_ad.png"></router-link>
 		<mt-popup v-model="vip_popup" position="bottom">
 			<div class="vip_box">
 				<h3>VIP 服务介绍</h3>

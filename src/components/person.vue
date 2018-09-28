@@ -5,7 +5,7 @@
       <div class="container">
         <div class="cell_box head_box">
           <h3>会员金卡<img @click="$router.push('/settings')" src="../assets/img/icon/settings.png" alt=""></h3>
-          <img class="ls_head" :src="head_img"></img>
+          <img class="ls_head" :src="head_img">
           <h4>主律师：Alexander</h4>
         </div>
         <div class="collect_cell">
@@ -13,7 +13,7 @@
         </div>
         <div class="cell_box">
           <h3>我的订单<span>More <img src="../assets/img/icon/down.png"></span></h3>
-      	  <router-link to="eOrder" v-for="(item,index) in cellLists" :key="index">
+      	  <router-link to="/eOrder" v-for="(item,index) in cellLists" :key="index">
 	          <mt-cell :title="item.title">
 	            <span>{{item.date}}</span>
 	            <img slot="icon" :src="item.img">
@@ -25,12 +25,12 @@
     <div class="vip_zone">
     	<h3>VIP专区</h3>
     	<ul>
-    		<li @click="$router.push('productDetail')"><img src="../assets/img/vip_img1.jpg" height="207" width="336"></li>
-    		<li @click="$router.push('productDetail')"><img src="../assets/img/vip_img2.jpg" height="207" width="336"></li>
+    		<li @click="$router.push('/productDetail/1')"><img src="../assets/img/vip_img1.jpg" height="207" width="336"></li>
+    		<li @click="$router.push('/productDetail/1')"><img src="../assets/img/vip_img2.jpg" height="207" width="336"></li>
     	</ul>
     </div>
     <div class="lawyer">
-    	<router-link to="lawyer">我是律师<img src="../assets/img/icon/right_three2.png" alt=""></router-link>
+    	<router-link to="/lawyer">我是律师<img src="../assets/img/icon/right_three2.png" alt=""></router-link>
     </div>
     <dsFooter :selected="selected"></dsFooter>
 	</div>
@@ -215,6 +215,9 @@ export default {
 	display: block;
 	width: 100%;
 	height: auto;
+}
+.vip_zone ul li:active img{
+  opacity: .8;
 }
 
 .lawyer{

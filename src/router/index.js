@@ -33,16 +33,19 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
+      meta:{index:1},
       component: Index
     },
     {
       path: '/home',
       name: 'Home',
+      meta:{index:1},
       component: Home
     },
     {
       path: '/store',
       name: 'Store',
+      meta:{index:2},
       component: Store,
       // children: [
       //   // 当 /user/:id 匹配成功，
@@ -53,102 +56,127 @@ export default new Router({
     {
       path: '/person',
       name: 'Person',
+      meta:{index:3},
       component: Person
     },
     {
       path: '/storeDetail',
       name: 'storeDetail',
+      meta:{index:6},
       component: storeDetail
     },
     {
-      path: '/productDetail',
+      path: '/productDetail/:id',
       name: 'productDetail',
+      meta:{index:7},
       component: productDetail
     },
     {
-      path: '/search',
+      path: '/search/:id',
       name: 'Search',
+      meta:{index:4},
       component: Search
     },
     {
       path: '/assess',
       name: 'Assess',
+      meta:{index:8},
       component: Assess
     },
     {
       path: '/eOrder',
       name: 'Eorder',
+      meta:{index:8},
       component: Eorder
     },
     {
       path: '/chat',
       name: 'Chat',
+      meta:{index:9},
       component: Chat
     },
     {
       path: '/complaint',
       name: 'Complaint',
+      meta:{index:9},
       component: Complaint
     },
     {
       path: '/evaluation',
       name: 'Evaluation',
+      meta:{index:9},
       component: Evaluation
     },
     {
       path: '/lawyer',
       name: 'Lawyer',
+      meta:{index:5},
       component: Lawyer
     },
     {
       path: '/shop',
       name: 'Shop',
+      meta:{index:9},
       component: Shop
     },
     {
       path: '/certify',
       name: 'Certify',
+      meta:{index:6},
       component: Certify
     },
     {
       path: '/service',
       name: 'Service',
+      meta:{index:9},
       component: Service
     },
     {
       path: '/applyFirst',
       name: 'applyFirst',
+      meta:{index:6},
       component: applyFirst
     },
     {
       path: '/applySecond',
       name: 'applySecond',
+      meta:{index:7},
       component: applySecond
     },
     {
       path: '/applyFinish',
       name: 'applyFinish',
+      meta:{index:8},
       component: applyFinish
     },
     {
       path: '/client',
       name: 'Client',
+      meta:{index:7},
       component: Client
     },
     {
       path: '/advisory',
       name: 'Advisory',
+      meta:{index:8},
       component: Advisory
     },
     {
       path: '/order',
       name: 'Order',
+      meta:{index:9},
       component: Order
     },
     {
       path: '/settings',
       name: 'Settings',
+      meta:{index:4},
       component: Settings
+    },
+    {
+      path: '*',
+      meta:{index:1},
+      component: Index
     }
   ]
 })

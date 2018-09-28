@@ -107,6 +107,9 @@ export default{
 		padding: 5px;
 		border: 1px solid #ECECEC;
 	}
+  .ls_head:active{
+    opacity: .8;
+  }
 	.settings_top h3{
 		color: #3e3e3e;
 		font-size: 30px;

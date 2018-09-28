@@ -7,7 +7,7 @@
 					</mt-button>
 	      </router-link>
         <mt-button slot="right" v-show="show" :show="show">
-				  <img src="../assets/img/icon/person.png" class="per_img" slot="icon" width="20" height="20" @click="$router.push('person')">
+				  <img src="../assets/img/icon/person.png" class="per_img" slot="icon" width="20" height="20" @click="$router.push('/person')">
 				</mt-button>
 	    </mt-header>
 	</div>

@@ -221,8 +221,8 @@
 			</div>
 			<div class="tab3_info nobor">
 				<ul class="edit_ul">
-					<li><router-link to="Complaint"><img src="../../assets/img/icon/project_icon1.png"><p>投诉<img src="../../assets/img/icon/right_three2.png" alt=""></p></router-link></li>
-					<li><router-link to="Evaluation"><img src="../../assets/img/icon/project_icon2.png"><p>评价<img src="../../assets/img/icon/right_three2.png" alt=""></p></router-link></li>
+					<li><router-link to="/Complaint"><img src="../../assets/img/icon/project_icon1.png"><p>投诉<img src="../../assets/img/icon/right_three2.png" alt=""></p></router-link></li>
+					<li><router-link to="/Evaluation"><img src="../../assets/img/icon/project_icon2.png"><p>评价<img src="../../assets/img/icon/right_three2.png" alt=""></p></router-link></li>
 					<li><router-link to=""><img src="../../assets/img/icon/project_icon3.png"><p>加单<img src="../../assets/img/icon/right_three2.png" alt=""></p></router-link></li>
 				</ul>
 			</div>
@@ -232,7 +232,7 @@
       <div class="footer_left">¥{{price}}</div>
       <div class="footer_right"><router-link to="">提交订单</router-link></div>
     </div>
-		<router-link to="Chat" class="customer_service"><img src="../../assets/img/service_ad.png"></router-link>
+		<router-link to="/chat" class="customer_service"><img src="../../assets/img/service_ad.png"></router-link>
 	</div>
 </template>
 
@@ -909,7 +909,7 @@ export default{
 	}
 
 	/deep/ .mint-msgbox-confirm{
-	    color: #e74f5b;
+	    color: #e74f5b !important;
 	  }
 	/deep/ .mint-msgbox-header{
 	    padding-top: 30px;

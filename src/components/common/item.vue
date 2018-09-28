@@ -60,6 +60,9 @@ export default{
 		box-shadow: 0 0 20px #D1D1D1;
 		margin-bottom: 50px;
 	}
+  .lawyer_item:active{
+    opacity: .8;
+  }
 	.top_img{
 		position: relative;
 	}
