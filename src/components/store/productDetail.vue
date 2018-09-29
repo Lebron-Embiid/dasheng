@@ -337,9 +337,9 @@ export default{
 	.vip_box ul li{
 		overflow: hidden;
 		margin-bottom: 40px;
+		position: relative;
 		background: url(../../assets/img/vip_bg1.jpg) center center no-repeat;
 		background-size: 100% 100%;
-		position: relative;
 	}
 	.vip_box ul li:last-child{
 		background: url(../../assets/img/vip_bg2.jpg) center center no-repeat;

@@ -30,10 +30,10 @@
 	            message:this.selected,
 	        //这里使用的icon图标为图片，所以需要加图片改变的传入，若使用阿里图标，则不用加
 	            tabs:[
-					require("../assets/img/icon/footer_icon1.png"),
-					require("../assets/img/icon/footer_icon2.png"),
-					require("../assets/img/icon/footer_icon3.png")
-				],
+                require("../assets/img/icon/footer_icon1.png"),
+                require("../assets/img/icon/footer_icon2.png"),
+                require("../assets/img/icon/footer_icon3.png")
+              ],
 	        }
 	    },
 	    props:{
@@ -50,11 +50,11 @@
 	                    this.$router.replace('/store');
 	                break;
 	                case 'person':
-	                    this.$router.replace('/person');
+                      this.$router.replace('/person');
 	                break;
 	            }
 	        }
-	    }
+      }
 	}
 </script>
 

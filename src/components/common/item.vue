@@ -1,41 +1,51 @@
 <template>
 	<div id="item">
+    <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" ref="loadmore">
 		<div class="lawyer_item" @click="toLawyerDetail" v-for="(item,index) in list" :key="index">
-      		<div class="top_img">
-      			<img :src="item.background">
-      			<div class="img_layer">
-      				<div class="l_right">
-      					<div>
-      						<router-link to="/storeDetail">查看详情</router-link>
-      						<span>已受理：{{item.nums}}</span>
-      					</div>
-      				</div>
-					<h4>{{item.company}}</h4>
-					<p>{{item.info}}</p>
-      			</div>
-      			<img src="../../assets/img/icon/top_three.png" class="top_three">
-      		</div>
-      		<div class="bottom_info">
-      			<div class="left_words">
-      				<h5>主律师：{{item.name}}</h5>
-      				<p>已受理：{{item.nums}}件</p>
-      				<p>好评度：<img src="../../assets/img/icon/star.png" alt="" v-for="(i,idx) in item.starNum" :key="idx"></p>
-      				<p>执业年限：{{item.year}}年</p>
-      				<p>专业擅长：{{item.love}}</p>
-      			</div>
-      			<div class="right_head">
-      				<img src="../../assets/img/store_head.png">
-      			</div>
-      		</div>
-      	</div>
+      <div class="top_img">
+        <img :src="item.background">
+        <div class="img_layer">
+          <div class="l_right">
+            <div>
+              <router-link to="/storeDetail">查看详情</router-link>
+              <span>已受理：{{item.nums}}</span>
+            </div>
+          </div>
+      <h4>{{item.company}}</h4>
+      <p>{{item.info}}</p>
+        </div>
+        <img src="../../assets/img/icon/top_three.png" class="top_three">
+      </div>
+      <div class="bottom_info">
+        <div class="left_words">
+          <h5>主律师：{{item.name}}</h5>
+          <p>已受理：{{item.nums}}件</p>
+          <p>好评度：<img src="../../assets/img/icon/star.png" alt="" v-for="(i,idx) in item.starNum" :key="idx"></p>
+          <p>执业年限：{{item.year}}年</p>
+          <p>专业擅长：{{item.love}}</p>
+        </div>
+        <div class="right_head">
+          <img src="../../assets/img/store_head.png">
+        </div>
+      </div>
+    </div>
+    </mt-loadmore>
 	</div>
 </template>
 
 <script>
+import Vue from 'vue';
+import { Loadmore , Spinner } from 'mint-ui';
+Vue.use(Loadmore).use(Spinner);
 export default{
 	data(){
 		return{
-
+      allLoaded: false,
+      bottomStatus: '',
+      wrapperHeight: 0,
+      topStatus: '',
+      translate: 0,
+      moveTranslate: 0
 		}
 	},
 	props:{
@@ -44,7 +54,29 @@ export default{
 	methods:{
 		toLawyerDetail(){
 			this.$router.push('/storeDetail');
-		}
+    },
+    handleBottomChange(status) {
+        this.bottomStatus = status;
+      },
+
+      loadTop() {
+        // setTimeout(() => {
+        //   let firstValue = this.list[0];
+        //   for (let i = 1; i <= 2; i++) {
+        //     this.list.push(firstValue - i);
+        //   }
+        //   this.$refs.loadmore.onTopLoaded();
+        // }, 1500);
+      },
+      loadBottom() {
+        // setTimeout(() => {
+        //   let lastValue = this.list[this.list.length - 1];
+        //   for (let i = 1; i <= 2; i++) {
+        //     this.list.push(lastValue + i);
+        //   }
+        //   this.$refs.loadmore.onBottomLoaded();
+        // }, 1500);
+      }
 	}
 }
 </script>

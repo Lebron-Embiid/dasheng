@@ -1,22 +1,35 @@
 <template>
   <div id="app">
-    <transition :name="transitionName">
+    <!-- <dsHeader :headerTitle="headerTitle" :backshow="backshow" :show="show"></dsHeader> -->
+    <!-- <transition :name="transitionName"> -->
       <router-view/>
-    </transition>
+    <!-- </transition> -->
+    <!-- <div v-show="showFooter">
+      <dsFooter :selected="selected"></dsFooter>
+    </div> -->
   </div>
 </template>
 
 <script>
+  // import dsHeader from '@/components/header'
+// import dsFooter from '@/components/footer'
 export default {
   name: 'App',
   data(){
     return{
-      transitionName:''
+      transitionName:'',
+      // showFooter: false,
+      // selected: 'index'
     }
   },
   watch: {//使用watch 监听$router的变化
     $route(to, from) {
       //如果to索引大于from索引,判断为前进状态,反之则为后退状态
+      // if(to.meta.title == "index" || to.meta.title == "store" || to.meta.title == "person"){
+      //   this.showFooter = true;
+      // }else{
+      //   this.showFooter = false;
+      // }
       if(to.meta.index > from.meta.index){
         //设置动画名称
         this.transitionName = 'slide-left';
@@ -24,6 +37,10 @@ export default {
         this.transitionName = 'slide-right';
       }
     }
+  },
+  components:{
+    // dsHeader,
+    // dsFooter
   }
 }
 </script>
@@ -219,15 +236,38 @@ textarea{
 }
 
 .shade .top-view{
-    height: 80px;
-    padding: 10px 0;
-  }
+  height: 80px;
+  padding: 10px 0;
+}
 .shade .top-view p{
-    font-size: 24px;
-  }
+  font-size: 24px;
+}
 .shade .image img{
-    /*position: static;*/
-    height: auto;
-  }
+  /*position: static;*/
+  height: auto;
+}
 
+
+.mint-msgbox /deep/ .mint-msgbox-confirm{
+  color: #e74f5b;
+}
+.mint-msgbox /deep/ .mint-msgbox-confirm:active{
+  color: #e74f5b;
+}
+.mint-msgbox /deep/ .mint-msgbox-header{
+  padding-top: 30px;
+}
+.mint-msgbox /deep/ .mint-msgbox-title{
+  font-size: 30px;
+}
+.mint-msgbox /deep/ .mint-msgbox-content{
+  font-size: 28px;
+  padding: 20px 0;
+}
+.mint-msgbox /deep/ .mint-msgbox-btn{
+  font-size: 28px;
+}
+.mint-msgbox /deep/ .mint-msgbox-btns{
+  height: 80px;
+}
 </style>

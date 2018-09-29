@@ -251,22 +251,22 @@ export default{
 		return{
 			headerTitle: "e 颂服务订单",
 	    	backshow: true,
-			show: false,
-			headImg:require("../../assets/img/store_head.png"),
-			name:"张三",
-			phone:"136-8989-5656",
-			email:"585800@qq.com",
-			wechat:"2565555",
-			eOrder_title:"律师信息",
-			selected: "tab1",
-			slots: [
-	        {
-	          flex: 1,
-	          values: ['婚姻家庭', '未婚家庭', '单亲家庭'],
-	          className: 'slot1',
-	          textAlign: 'center'
-	        }
-	      ],
+        show: false,
+        headImg:require("../../assets/img/store_head.png"),
+        name:"张三",
+        phone:"136-8989-5656",
+        email:"585800@qq.com",
+        wechat:"2565555",
+        eOrder_title:"律师信息",
+        selected: "tab1",
+        slots: [
+            {
+              flex: 1,
+              values: ['婚姻家庭', '未婚家庭', '单亲家庭'],
+              className: 'slot1',
+              textAlign: 'center'
+            }
+          ],
 	      	popupVisible: false,
 	      	pickerType:"婚姻家庭",
 	      	addressList:[{
@@ -279,87 +279,87 @@ export default{
 	      		title:"原告户籍地",name:"detailAddress4"
 	      	}],
 	      	value:[],
-			//checklist设置
-			options : [{
-			    label: '身份证',
-			    value: 'A'
-			},{
-			    label: '户口本',
-			    value: 'B'
-			},{
-			    label: '出生证',
-			    value: 'C'
-			},{
-			    label: '结婚证',
-			    value: 'D'
-			},{
-			    label: '离婚证',
-			    value: 'E'
-			},{
-			    label: '离婚协议',
-			    value: 'F'
-			},{
-			    label: '房产证',
-			    value: 'G'
-			},{
-			    label: '银行账户',
-			    value: 'H'
-			},{
-			    label: '转账凭证',
-			    value: 'I'
-			},{
-			    label: '死亡证明',
-			    value: 'J'
-			},{
-			    label: '亲属关系证明',
-			    value: 'K'
-			},{
-			    label: '遗嘱',
-			    value: 'L'
-			},{
-			    label: '录音录像',
-			    value: 'M'
-			},{
-			    label: '证人证言',
-			    value: 'N'
-			},{
-			    label: '有价物品',
-			    value: 'O'
-			},{
-			    label: '照片',
-			    value: 'P'
-			},{
-			    label: '车辆行驶证',
-			    value: 'Q'
-			},{
-			    label: '证券账户',
-			    value: 'R'
-			},{
-			    label: '公司股权',
-			    value: 'S'
-			},{
-			    label: '债务/债务凭证',
-			    value: 'T'
-			},{
-			    label: '书面通知/函件',
-			    value: 'U'
-			},{
-			    label: '社交软件沟通记录（短信、微信、QQ、E-mali）',
-			    value: 'V'
-			}],
-			projectList:[{
-				icon:require("../../assets/img/icon/e_icon1.png"),
-				title:"案件信息",
-				name:"张律师"
-			},{
-				icon:require("../../assets/img/icon/e_icon2.png"),
-				title:"证据调查",
-				name:"张律师"
-			},{
-				icon:require("../../assets/img/icon/e_icon3.png"),
-				title:"案件材料准备",
-				name:"张律师"
-			}],
+        //checklist设置
+          options : [{
+              label: '身份证',
+              value: 'A'
+          },{
+              label: '户口本',
+              value: 'B'
+          },{
+              label: '出生证',
+              value: 'C'
+          },{
+              label: '结婚证',
+              value: 'D'
+          },{
+              label: '离婚证',
+              value: 'E'
+          },{
+              label: '离婚协议',
+              value: 'F'
+          },{
+              label: '房产证',
+              value: 'G'
+          },{
+              label: '银行账户',
+              value: 'H'
+          },{
+              label: '转账凭证',
+              value: 'I'
+          },{
+              label: '死亡证明',
+              value: 'J'
+          },{
+              label: '亲属关系证明',
+              value: 'K'
+          },{
+              label: '遗嘱',
+              value: 'L'
+          },{
+              label: '录音录像',
+              value: 'M'
+          },{
+              label: '证人证言',
+              value: 'N'
+          },{
+              label: '有价物品',
+              value: 'O'
+          },{
+              label: '照片',
+              value: 'P'
+          },{
+              label: '车辆行驶证',
+              value: 'Q'
+          },{
+              label: '证券账户',
+              value: 'R'
+          },{
+              label: '公司股权',
+              value: 'S'
+          },{
+              label: '债务/债务凭证',
+              value: 'T'
+          },{
+              label: '书面通知/函件',
+              value: 'U'
+          },{
+              label: '社交软件沟通记录（短信、微信、QQ、E-mali）',
+              value: 'V'
+          }],
+          projectList:[{
+            icon:require("../../assets/img/icon/e_icon1.png"),
+            title:"案件信息",
+            name:"张律师"
+          },{
+            icon:require("../../assets/img/icon/e_icon2.png"),
+            title:"证据调查",
+            name:"张律师"
+          },{
+            icon:require("../../assets/img/icon/e_icon3.png"),
+            title:"案件材料准备",
+            name:"张律师"
+          }],
       		count: 3,
       		multiple: true,
       		price: '10.00',
@@ -376,52 +376,66 @@ export default{
 
       		processTills1:[{
 	      		till_info:"客户确认",
-	      		till_show: true
+            till_show: true,
+            till_check: false
       		},{
 	      		till_info:"客户确认",
-	      		till_show: true
+	      		till_show: true,
+            till_check: false
       		}],
       		processTills2:[{
 	      		till_info:"客户确认",
-	      		till_show: true
+	      		till_show: true,
+            till_check: false
       		},{
 	      		till_info:"客户确认",
-	      		till_show: true
+	      		till_show: true,
+            till_check: false
       		}],
       		processTills3:[{
 	      		till_info:"客户确认",
-	      		till_show: true
+	      		till_show: true,
+            till_check: false
       		},{
 	      		till_info:"客户确认",
-	      		till_show: true
+	      		till_show: true,
+            till_check: false
       		}],
       		processTills4:[{
 	      		till_info:"客户确认",
-	      		till_show: true
+	      		till_show: true,
+            till_check: false
       		},{
 	      		till_info:"客户确认",
-	      		till_show: true
+	      		till_show: true,
+            till_check: false
       		}],
       		processTills5:[{
 	      		till_info:"客户确认",
-	      		till_show: true
+	      		till_show: true,
+            till_check: false
       		},{
 	      		till_info:"客户确认",
-	      		till_show: true
+	      		till_show: true,
+            till_check: false
       		}],
       		processTills6:[{
 	      		till_info:"客户确认",
-	      		till_show: true
+	      		till_show: true,
+            till_check: false
       		},{
 	      		till_info:"客户确认",
-	      		till_show: true
+	      		till_show: true,
+            till_check: false
       		}],
       		processTills7:[{
 	      		till_info:"客户确认",
-	      		till_show: true
+	      		till_show: true,
+            till_check: false
       		},{
 	      		till_info:"客户确认",
-	      		till_show: true
+	      		till_show: true,
+            till_check: false
       		}]
 		}
 	},
@@ -462,46 +476,67 @@ export default{
      		this.time = moment(data).format('YYYY-MM-DD')
 		},
 		clickTill1(index){
-			MessageBox.confirm('确定执行此操作?').then(action => {
-				this.processTills1[index].till_info = this.getNowFormatDate(),
-				this.processTills1[index].till_show = false
-			});
+      if(this.processTills1[index].till_check == false){
+        MessageBox.confirm('确定执行此操作?').then(action => {
+            this.processTills1[index].till_info = this.getNowFormatDate();
+            this.processTills1[index].till_show = false;
+            this.processTills1[index].till_check = true;
+        });
+      }
 		},
 		clickTill2(index){
-			MessageBox.confirm('确定执行此操作?').then(action => {
-				this.processTills2[index].till_info = this.getNowFormatDate(),
-				this.processTills2[index].till_show = false
-			});
+      if(this.processTills2[index].till_check == false){
+        MessageBox.confirm('确定执行此操作?').then(action => {
+          this.processTills2[index].till_info = this.getNowFormatDate();
+          this.processTills2[index].till_show = false;
+          this.processTills2[index].till_check = true;
+        });
+      }
 		},
 		clickTill3(index){
-			MessageBox.confirm('确定执行此操作?').then(action => {
-				this.processTills3[index].till_info = this.getNowFormatDate(),
-				this.processTills3[index].till_show = false
-			});
+      if(this.processTills3[index].till_check == false){
+        MessageBox.confirm('确定执行此操作?').then(action => {
+          this.processTills3[index].till_info = this.getNowFormatDate();
+          this.processTills3[index].till_show = false;
+          this.processTills3[index].till_check = true;
+        });
+      }
 		},
 		clickTill4(index){
-			MessageBox.confirm('确定执行此操作?').then(action => {
-				this.processTills4[index].till_info = this.getNowFormatDate(),
-				this.processTills4[index].till_show = false
-			});
+      if(this.processTills4[index].till_check == false){
+        MessageBox.confirm('确定执行此操作?').then(action => {
+          this.processTills4[index].till_info = this.getNowFormatDate();
+          this.processTills4[index].till_show = false;
+          this.processTills4[index].till_check = true;
+        });
+      }
 		},
 		clickTill5(index){
-			MessageBox.confirm('确定执行此操作?').then(action => {
-				this.processTills5[index].till_info = this.getNowFormatDate(),
-				this.processTills5[index].till_show = false
-			});
+      if(this.processTills5[index].till_check == false){
+        MessageBox.confirm('确定执行此操作?').then(action => {
+          this.processTills5[index].till_info = this.getNowFormatDate();
+          this.processTills5[index].till_show = false;
+          this.processTills5[index].till_check = true;
+        });
+      }
 		},
 		clickTill6(index){
-			MessageBox.confirm('确定执行此操作?').then(action => {
-				this.processTills6[index].till_info = this.getNowFormatDate(),
-				this.processTills6[index].till_show = false
-			});
+      if(this.processTills6[index].till_check == false){
+        MessageBox.confirm('确定执行此操作?').then(action => {
+          this.processTills6[index].till_info = this.getNowFormatDate();
+          this.processTills6[index].till_show = false;
+          this.processTills6[index].till_check = true;
+        });
+      }
 		},
 		clickTill7(index){
-			MessageBox.confirm('确定执行此操作?').then(action => {
-				this.processTills7[index].till_info = this.getNowFormatDate(),
-				this.processTills7[index].till_show = false
-			});
+      if(this.processTills7[index].till_check == false){
+        MessageBox.confirm('确定执行此操作?').then(action => {
+          this.processTills7[index].till_info = this.getNowFormatDate();
+          this.processTills7[index].till_show = false;
+          this.processTills7[index].till_check = true;
+        });
+      }
 		},
 	}
 }
@@ -896,35 +931,16 @@ export default{
 		margin-top: 5px;
 	}
 
-	/deep/ .shade .top-view{
+	.mint-msgbox /deep/ .shade .top-view{
 		height: 80px;
 		padding: 10px 0;
 	}
-	/deep/ .shade .top-view p{
+	.mint-msgbox /deep/ .shade .top-view p{
 		font-size: 24px;
 	}
-	/deep/ .shade .image img{
+	.mint-msgbox /deep/ .shade .image img{
 		/*position: static;*/
 		height: auto;
 	}
 
-	/deep/ .mint-msgbox-confirm{
-	    color: #e74f5b !important;
-	  }
-	/deep/ .mint-msgbox-header{
-	    padding-top: 30px;
-	  }
-	/deep/ .mint-msgbox-title{
-	    font-size: 30px;
-	  }
-	/deep/ .mint-msgbox-content{
-	    font-size: 28px;
-	    padding: 20px 0;
-	  }
-	/deep/ .mint-msgbox-btn{
-	    font-size: 28px;
-	  }
-	/deep/ .mint-msgbox-btns{
-	    height: 80px;
-	  }
 </style>

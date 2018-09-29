@@ -33,19 +33,19 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      meta:{index:1},
+      meta:{index:1,title:"index"},
       component: Index
     },
     {
       path: '/home',
       name: 'Home',
-      meta:{index:1},
+      meta:{index:1,title:"index"},
       component: Home
     },
     {
       path: '/store',
       name: 'Store',
-      meta:{index:2},
+      meta:{index:2,title:"store"},
       component: Store,
       // children: [
       //   // 当 /user/:id 匹配成功，
@@ -56,7 +56,7 @@ export default new Router({
     {
       path: '/person',
       name: 'Person',
-      meta:{index:3},
+      meta:{index:3,title:"person"},
       component: Person
     },
     {
