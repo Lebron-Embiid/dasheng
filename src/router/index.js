@@ -1,28 +1,52 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/components/index'
-import Home from '@/components/home'
-import Store from '@/components/store'
-import Person from '@/components/person'
-import storeDetail from '@/components/store/storeDetail'
-import productDetail from '@/components/store/productDetail'
-import Search from '@/components/store/search'
-import Assess from '@/components/store/assess'
-import Eorder from '@/components/order/eOrder'
-import Chat from '@/components/chat'
-import Complaint from '@/components/order/complaint'
-import Evaluation from '@/components/order/evaluation'
-import Lawyer from '@/components/person/lawyer'
-import Shop from '@/components/person/shop'
-import Certify from '@/components/person/certify'
-import Service from '@/components/person/service'
-import applyFirst from '@/components/person/applyFirst'
-import applySecond from '@/components/person/applySecond'
-import applyFinish from '@/components/person/applyFinish'
-import Client from '@/components/person/client'
-import Advisory from '@/components/person/advisory'
-import Order from '@/components/person/order'
-import Settings from '@/components/person/settings'
+
+// import Index from '@/components/index'
+// import Home from '@/components/home'
+// import Store from '@/components/store'
+// import Person from '@/components/person'
+// import storeDetail from '@/components/store/storeDetail'
+// import productDetail from '@/components/store/productDetail'
+// import Search from '@/components/store/search'
+// import Assess from '@/components/store/assess'
+// import Eorder from '@/components/order/eOrder'
+// import Chat from '@/components/chat'
+// import Complaint from '@/components/order/complaint'
+// import Evaluation from '@/components/order/evaluation'
+// import Lawyer from '@/components/person/lawyer'
+// import Shop from '@/components/person/shop'
+// import Certify from '@/components/person/certify'
+// import Service from '@/components/person/service'
+// import applyFirst from '@/components/person/applyFirst'
+// import applySecond from '@/components/person/applySecond'
+// import applyFinish from '@/components/person/applyFinish'
+// import Client from '@/components/person/client'
+// import Advisory from '@/components/person/advisory'
+// import Order from '@/components/person/order'
+// import Settings from '@/components/person/settings'
+const Index = r => require.ensure([], () => r(require('@/components/index')), 'index')
+const Home = r => require.ensure([], () => r(require('@/components/home')), 'home')
+const Store = r => require.ensure([], () => r(require('@/components/store')), 'store')
+const Person = r => require.ensure([], () => r(require('@/components/person')), 'person')
+const storeDetail = r => require.ensure([], () => r(require('@/components/store/storeDetail')), 'storeDetail')
+const productDetail = r => require.ensure([], () => r(require('@/components/store/productDetail')), 'productDetail')
+const Search = r => require.ensure([], () => r(require('@/components/store/search')), 'search')
+const Assess = r => require.ensure([], () => r(require('@/components/store/assess')), 'assess')
+const Eorder = r => require.ensure([], () => r(require('@/components/order/eOrder')), 'eOrder')
+const Chat = r => require.ensure([], () => r(require('@/components/chat')), 'chat')
+const Complaint = r => require.ensure([], () => r(require('@/components/order/complaint')), 'complaint')
+const Evaluation = r => require.ensure([], () => r(require('@/components/order/evaluation')), 'evaluation')
+const Lawyer = r => require.ensure([], () => r(require('@/components/person/lawyer')), 'lawyer')
+const Shop = r => require.ensure([], () => r(require('@/components/person/shop')), 'shop')
+const Certify = r => require.ensure([], () => r(require('@/components/person/certify')), 'certify')
+const Service = r => require.ensure([], () => r(require('@/components/person/service')), 'service')
+const applyFirst = r => require.ensure([], () => r(require('@/components/person/applyFirst')), 'applyFirst')
+const applySecond = r => require.ensure([], () => r(require('@/components/person/applySecond')), 'applySecond')
+const applyFinish = r => require.ensure([], () => r(require('@/components/person/applyFinish')), 'applyFinish')
+const Client = r => require.ensure([], () => r(require('@/components/person/client')), 'client')
+const Advisory = r => require.ensure([], () => r(require('@/components/person/advisory')), 'advisory')
+const Order = r => require.ensure([], () => r(require('@/components/person/order')), 'order')
+const Settings = r => require.ensure([], () => r(require('@/components/person/settings')), 'settings')
 
 Vue.use(Router)
 
