@@ -1,12 +1,14 @@
 <template>
 	<div id="search">
-		<div class="header">
+		<!-- <div class="header">
 			<div class="back" @click="$router.back(-1)"><img src="../../assets/img/icon/back.png" width="20" height="20"></div>
 			<form class="search_box">
 	      <div class="sleft"><input type="text" name="search" placeholder="搜服务商品" autocomplete="off"></div>
 	      <div class="sright"><img src="../../assets/img/icon/search_w.png"></div>
 	    </form>
-		</div>
+		</div> -->
+		<dsHeader :headerTitle="headerTitle" :backshow="backshow" :show="show"></dsHeader>
+		<app-banner :swipeList="swipeList" :vipShow="vip"></app-banner>
 		<div class="select_nav">
 			<ul class="navs">
 				<li v-for="(item,index) in navList" :key="index" @click="showChild(index)">
@@ -26,7 +28,7 @@
 					<div class="shop_top">
 						<div class="shop_left">
 							<img src="../../assets/img/store_head.png">
-							<h4>主律师：{{item.name}}</h4>
+							<h4>律师：{{item.name}}</h4>
 							<h5>价 格：{{item.price}}元</h5>
 						</div>
 						<div class="shop_right">
@@ -43,9 +45,17 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import dsHeader from '@/components/header'
+import comBanner from '@/components/common/banner'
 export default{
 	data(){
 		return{
+			headerTitle: "搜索",
+			backshow: true,
+      show: false,
+      vip: false,
+
 			navList:[{
 				nav:"深圳",
 				show: false,
@@ -91,8 +101,28 @@ export default{
 				starNum: 5,
 				year:10,
 				love:"曾成功处理多起涉外非诉讼案件，熟知各类法律业务流程."
+			}],
+			swipeList:[{
+				href: "",
+				img: require("../../assets/img/swipe_img1.jpg")
+			},{
+				href: "",
+				img: require("../../assets/img/swipe_img1.jpg")
+			},{
+				href: "",
+				img: require("../../assets/img/swipe_img1.jpg")
+			},{
+				href: "",
+				img: require("../../assets/img/swipe_img1.jpg")
+			},{
+				href: "",
+				img: require("../../assets/img/swipe_img1.jpg")
 			}]
 		}
+  },
+  components:{
+    dsHeader,
+		'app-banner':comBanner
   },
   created(){
     console.log(this.$route.params.id)
@@ -117,7 +147,7 @@ export default{
 
 <style scoped>
 	#search{
-		padding-top: 100px;
+		padding-top: 88px;
 	}
 	.header{
 		overflow: hidden;

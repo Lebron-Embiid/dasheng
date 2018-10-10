@@ -7,7 +7,7 @@
 		  </mt-tab-item>
 		  <mt-tab-item id="store">
 		    <img slot="icon" :src="this.tabs[1]">
-		    商城
+		    找律师
 		  </mt-tab-item>
 		  <mt-tab-item id="person">
 		    <img slot="icon" :src="this.tabs[2]">

@@ -25,7 +25,8 @@ export default{
   },
   methods:{
     vipBtn(){
-      this.$emit("childToParent",this.vipShow)
+      // this.$emit("childToParent",this.vipShow)
+      this.$router.push('/search/7')
     }
   }
 }

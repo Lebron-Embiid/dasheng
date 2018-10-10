@@ -5,7 +5,7 @@
 		<div class="store_content">
 	      <div class="container">
 	      	<form class="search_box">
-		        <div class="sleft"><input type="text" name="search" placeholder="搜律所，律师" autocomplete="off"></div>
+		        <div class="sleft"><input type="text" name="search" placeholder="找律师、律所" autocomplete="off"></div>
 		        <div class="sright"><img src="../assets/img/icon/search_w.png"></div>
 	      	</form>
 		      <div class="lawyer">
@@ -29,7 +29,7 @@ Vue.use(Swipe).use(SwipeItem)
 export default{
 	data(){
 		return{
-			headerTitle: "商城",
+			headerTitle: "找律师",
 			backshow: false,
 			show: true,
 			vip: true,
@@ -109,7 +109,7 @@ export default{
 	.search_box .sleft{
 		width: 84%;
 		float: left;
-		padding: 15px 0 15px 30px;
+		padding: 15px 0 12px 30px;
 		box-sizing: border-box;
 	}
 	.search_box .sleft input{

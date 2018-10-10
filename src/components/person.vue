@@ -4,9 +4,9 @@
     <div class="vip_box">
       <div class="container">
         <div class="cell_box head_box">
-          <h3>会员金卡<img @click="$router.push('/settings')" src="../assets/img/icon/settings.png" alt=""></h3>
+          <h3><img @click="$router.push('/settings')" src="../assets/img/icon/settings.png" alt=""></h3>
           <img class="ls_head" :src="head_img">
-          <h4>主律师：Alexander</h4>
+          <h4>Alexander</h4>
         </div>
         <div class="collect_cell">
           <router-link to="">我的收藏<img src="../assets/img/icon/right_three2.png" alt=""></router-link>
@@ -117,6 +117,7 @@ export default {
   padding-bottom: 20px;
   font-weight: normal;
   border-bottom: 1px solid #F3F3F3;
+  overflow: hidden;
 }
 .head_box h3{
 	border-bottom: 0;

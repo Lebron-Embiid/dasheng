@@ -27,7 +27,7 @@
 				<div class="shop_top">
 					<div class="shop_left">
 						<img src="../../assets/img/store_head.png">
-						<h4>主律师：{{item.name}}</h4>
+						<h4>{{item.name}}</h4>
 					</div>
 					<div class="shop_right">
 						<p>已受理：{{item.nums}}件</p>

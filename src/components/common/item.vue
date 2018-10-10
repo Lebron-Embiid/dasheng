@@ -18,7 +18,7 @@
       </div>
       <div class="bottom_info">
         <div class="left_words">
-          <h5>主律师：{{item.name}}</h5>
+          <h5>主管律师：{{item.name}}</h5>
           <p>已受理：{{item.nums}}件</p>
           <p>好评度：<img src="../../assets/img/icon/star.png" alt="" v-for="(i,idx) in item.starNum" :key="idx"></p>
           <p>执业年限：{{item.year}}年</p>

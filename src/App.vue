@@ -89,9 +89,10 @@ h1,h2,h3,h4,h5,h6,p{font-weight: normal;margin: 0;}
 a{text-decoration: none;}
 .vip{
   display: block;
-  position: absolute;
+  position: fixed;
   right: 30px;
-  bottom: -30px;
+  /* bottom: -30px; */
+  top: 320px;
   width: 100px;
   height: 100px;
   border-radius: 50%;

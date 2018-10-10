@@ -15,9 +15,9 @@
               </router-link>
             </div>
             <div class="cell_box">
-              <h3>您的专属律师</h3>
+              <h3>金卡会员<span>2019-05-18</span></h3>
               <img class="ls_head" :src="head_img">
-              <h4>主律师：{{head_name}}</h4>
+              <h4>专属律师：{{head_name}}</h4>
               <ul>
                 <li v-for="(item,index) in lsList" :key="index"><h5>{{item.info}}</h5><p><img :src="item.icon">{{item.num}}</p></li>
               </ul>
@@ -31,9 +31,13 @@
 	      <ul>
 	        <li v-for="(item,index) in iconList" :key="index"><router-link :to="{name:'Search',params:{id:item.id}}"><h4><img :src="item.icon">{{item.title}}</h4><p>{{item.info}}</p></router-link></li>
 	      </ul>
-	      <form class="search_box">
-	        <div><img src="../assets/img/icon/search.png"><input type="text" @focus="$router.push('/store')" name="search" placeholder="搜律所，律师" autocomplete="off"></div>
-	      </form>
+	      <!-- <form class="search_box">
+	        <div><img src="../assets/img/icon/search.png"><input type="text" name="search" placeholder="搜律所，律师" autocomplete="off"></div>
+	      </form> -->
+        <form class="search_box">
+          <div class="sleft"><input type="text" name="search" placeholder="找律师、律所" @focus="$router.push('/store')" autocomplete="off"></div>
+          <div class="sright"><img src="../assets/img/icon/search_w.png"></div>
+        </form>
 	    </div>
 	    <!-- 底部文字 -->
 	    <div class="footer_words">
@@ -54,7 +58,7 @@ export default {
   name: 'index',
   data () {
     return {
-      vipShow: false,
+      vipShow: true,
       head_img: require("../assets/img/ls_head.png"),
       head_name:"Alexander",
       vip: true,
@@ -134,7 +138,8 @@ export default {
   },
   methods:{
   	showVip(data){
-      this.vipShow = !this.vipShow
+      // this.vipShow = !this.vipShow
+
   	}
   },
   components:{
@@ -349,7 +354,7 @@ export default {
     background: #f6ddb1;
   }
 
-  .search_box{
+  /* .search_box{
     padding: 15px 0;
     background: #e3e4e6;
     border-radius: 10px;
@@ -361,7 +366,38 @@ export default {
     height: 32px;
     vertical-align: middle;
     margin: 0 20px 6px 0;
+  } */
+  .search_box{
+		margin: 15px 0 30px;
+		background: #e3e4e6;
+		border-radius: 10px;
+		overflow: hidden;
+		box-sizing: border-box;
+	}
+	.search_box .sleft{
+		width: 84%;
+		float: left;
+		padding: 15px 0 12px 30px;
+		box-sizing: border-box;
+	}
+	.search_box .sleft input{
+		width: 100%;
+	}
+	.search_box .sright{
+		width: 16%;
+		float: right;
+		background: #169bd5;
+		padding: 15px 0;
+	}
+  .search_box .sright:active{
+    opacity: .8;
   }
+	.search_box .sright img{
+		display: block;
+		width: 32px;
+		height: 32px;
+		margin: 0 auto;
+	}
 
   .footer_words{
     text-align: center;
