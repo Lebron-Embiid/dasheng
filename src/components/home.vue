@@ -6,7 +6,7 @@
         <div class="vip_box" v-show="vipShow">
           <div class="container">
             <div class="cell_box">
-              <h3>服务中的项目<span>More <img src="../assets/img/icon/down.png"></span></h3>
+              <h3>服务中的项目<router-link tag="span" to="/moreOrder">More <img src="../assets/img/icon/down.png"></router-link></h3>
                 <router-link to="/eOrder" v-for="(item,index) in cellLists" :key="index">
                 <mt-cell :title="item.title">
                   <span>{{item.date}}</span>

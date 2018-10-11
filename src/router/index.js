@@ -47,6 +47,8 @@ const Client = r => require.ensure([], () => r(require('@/components/person/clie
 const Advisory = r => require.ensure([], () => r(require('@/components/person/advisory')), 'advisory')
 const Order = r => require.ensure([], () => r(require('@/components/person/order')), 'order')
 const Settings = r => require.ensure([], () => r(require('@/components/person/settings')), 'settings')
+const Collect = r => require.ensure([], () => r(require('@/components/person/collect')), 'collect')
+const moreOrder = r => require.ensure([], () => r(require('@/components/person/moreOrder')), 'moreOrder')
 
 Vue.use(Router)
 
@@ -196,6 +198,18 @@ export default new Router({
       name: 'Settings',
       meta:{index:4},
       component: Settings
+    },
+    {
+      path: '/collect',
+      name: 'Collect',
+      meta:{index:8},
+      component: Collect
+    },
+    {
+      path: '/moreOrder',
+      name: 'moreOrder',
+      meta:{index:8},
+      component: moreOrder
     },
     {
       path: '*',

@@ -7,8 +7,10 @@ import 'lib-flexible'
 import 'mint-ui/lib/style.css'
 import App from './App'
 import router from './router'
+import Lytab from 'ly-tab'
 
-Vue.use(MintUI);
+Vue.use(MintUI)
+Vue.use(Lytab)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
