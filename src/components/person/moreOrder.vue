@@ -8,15 +8,16 @@
           @change="tabChange">
       </ly-tab>
       <div class="pay_box">
-        <div class="pay_item" v-for="(item,index) in pay_lists" :key="index">
+        <div class="pay_item" @click="$router.push('/eOrder')" v-for="(item,index) in pay_lists" :key="index">
           <div class="left">
             <h4>订单号：{{item.orderId}}</h4>
             <p>服务费：¥{{item.price}}</p>
-            <span :class="item.service">{{item.status}}</span>
+            <!-- <span :class="item.service">{{item.status}}</span> -->
+            <span>律师：{{item.name}} {{item.phone}}</span>
           </div>
           <div class="right">
-            <router-link to="" :class="item.active">{{item.btn}}</router-link>
-            <p>服务时间：{{item.time}}</p>
+            <router-link to="/eOrder" :class="item.active">{{item.btn}}</router-link>
+            <p>下单时间：{{item.time}}</p>
           </div>
         </div>
       </div>
@@ -34,6 +35,8 @@ export default{
       backshow: true,
       show: false,
       pay_lists:[{
+        name:"张三",
+        phone:"13689895656",
         orderId:"0115789",
         price:"35000.00",
         status:"服务中",
@@ -42,6 +45,8 @@ export default{
         btn: "去支付",
         time:"2018-08-18"
       },{
+        name:"张三",
+        phone:"13689895656",
         orderId:"0256896",
         price:"55000.00",
         status:"已完成服务",
@@ -125,9 +130,13 @@ export default{
     font-size: 24px;
     margin-bottom: 10px;
   }
-  .pay_item .left span{
+  /* .pay_item .left span{
     color: #6c6c6c;
     font-size: 22px;
+  } */
+  .pay_item .left span{
+    color: #444;
+    font-size: 24px;
   }
   .pay_item .left span.active{
     color: #169bd5;
