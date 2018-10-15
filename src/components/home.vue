@@ -6,6 +6,12 @@
         <div class="vip_box" v-show="vipShow">
           <div class="container">
             <div class="cell_box">
+              <h3>我的律师</h3>
+              <ul>
+                <li v-for="(item,index) in myLawyers" :key="index" @click="toChat"><img :src="item.head_img" alt=""><div><h5>{{item.username}}</h5><p>联系电话：{{item.phone}}</p></div></li>
+              </ul>
+            </div>
+            <div class="cell_box">
               <h3>服务中的项目<router-link tag="span" to="/moreOrder">More <img src="../assets/img/icon/down.png"></router-link></h3>
                 <router-link to="/eOrder" v-for="(item,index) in cellLists" :key="index">
                 <mt-cell :title="item.title">
@@ -14,14 +20,14 @@
                 </mt-cell>
               </router-link>
             </div>
-            <div class="cell_box">
+            <!-- <div class="cell_box">
               <h3>金卡会员<span>2019-05-18</span></h3>
               <img class="ls_head" :src="head_img">
               <h4>专属律师：{{head_name}}</h4>
               <ul>
                 <li v-for="(item,index) in lsList" :key="index"><h5>{{item.info}}</h5><p><img :src="item.icon">{{item.num}}</p></li>
               </ul>
-            </div>
+            </div> -->
           </div>
         </div>
       </transition>
@@ -133,6 +139,19 @@ export default {
         icon: require("../assets/img/icon/service_icon7.png"),
         title: "会员卡",
         info: "您的专属法律顾问！",
+      }],
+      myLawyers:[{
+        head_img: require("../assets/img/advisory6.png"),
+        username: "王小小a",
+        phone:"13685625596"
+      },{
+        head_img: require("../assets/img/advisory6.png"),
+        username: "王小小a",
+        phone:"13685625596"
+      },{
+        head_img: require("../assets/img/advisory6.png"),
+        username: "王小小a",
+        phone:"13685625596"
       }]
     }
   },
@@ -140,7 +159,10 @@ export default {
   	showVip(data){
       // this.vipShow = !this.vipShow
 
-  	}
+    },
+    toChat(){
+      this.$router.push('/chat')
+    }
   },
   components:{
     'app-banner':comBanner
@@ -166,7 +188,7 @@ export default {
     overflow: hidden;
     border: 1px solid #E9E9E9;
     padding: 20px 20px 25px;
-    margin: 10px 0 50px;
+    margin: 10px 0 30px;
   }
   .service_box{
     border: 0;
@@ -249,20 +271,42 @@ export default {
     padding: 5px;
     border: 1px solid #ECECEC;
   }
-  .cell_box ul{
+  /* .cell_box ul{
     padding: 0 60px;
     display: flex;
     justify-content: space-between;
+  } */
+
+  .cell_box ul{
+    overflow: hidden;
+  }
+  .cell_box ul li{
+    padding: 30px 20px;
+    background: #fafafa;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+  .cell_box ul li img{
+    display: block;
+    float: left;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  .cell_box ul li div{
+    float: left;
   }
   .cell_box ul li h5{
     margin: 0 0 10px;
-    color: #4a4a4a;
-    font-size: 28px;
+    color: #444;
+    font-size: 26px;
     font-weight: normal;
   }
   .cell_box ul li p{
     margin: 0;
-    font-size: 26px;
+    color: #777;
+    font-size: 24px;
     text-align: center;
   }
   .cell_box ul li p img{
