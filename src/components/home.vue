@@ -6,13 +6,10 @@
         <div class="vip_box" v-show="vipShow">
           <div class="container">
             <div class="cell_box">
-              <h3>我的律师</h3>
-              <ul>
-                <li v-for="(item,index) in myLawyers" :key="index" @click="toChat"><img :src="item.head_img" alt=""><div><h5>{{item.username}}</h5><p>联系电话：{{item.phone}}</p></div></li>
-              </ul>
-            </div>
-            <div class="cell_box">
               <h3>服务中的项目<router-link tag="span" to="/moreOrder">More <img src="../assets/img/icon/down.png"></router-link></h3>
+                <ul>
+                  <li v-for="(item,index) in myLawyers" :key="index" @click="toChat"><img :src="item.head_img" alt=""><div><h5>专属律师：{{item.username}}</h5><p>{{item.date}}</p></div></li>
+                </ul>
                 <router-link to="/eOrder" v-for="(item,index) in cellLists" :key="index">
                 <mt-cell :title="item.title">
                   <span>{{item.date}}</span>
@@ -143,15 +140,15 @@ export default {
       myLawyers:[{
         head_img: require("../assets/img/advisory6.png"),
         username: "王小小a",
-        phone:"13685625596"
+        date:"2018-08-19"
       },{
         head_img: require("../assets/img/advisory6.png"),
         username: "王小小a",
-        phone:"13685625596"
+        date:"2018-08-19"
       },{
         head_img: require("../assets/img/advisory6.png"),
         username: "王小小a",
-        phone:"13685625596"
+        date:"2018-08-19"
       }]
     }
   },
@@ -218,7 +215,7 @@ export default {
     border: 2px solid #5BB8E0;
     border-radius: 20px;
     padding: 5px 15px;
-    display: inline-block;
+    /* display: inline-block; */
     vertical-align: top;
   }
   .cell_box h3 span img{
@@ -236,14 +233,14 @@ export default {
     background: #fafafa;
     margin-bottom: 15px;
   }
-  /deep/ .mint-cell-wrapper{
+  #home /deep/ .mint-cell-wrapper{
     padding: 0 15px 0 0;
   }
-  /deep/ .mint-cell-text{
+  #home /deep/ .mint-cell-text{
     font-size: 26px;
   }
-  /deep/ .mint-cell-value{
-    font-size: 20px;
+  #home /deep/ .mint-cell-value{
+    font-size: 22px;
   }
 
   .cell_box a{
@@ -281,10 +278,11 @@ export default {
     overflow: hidden;
   }
   .cell_box ul li{
-    padding: 30px 20px;
     background: #fafafa;
     overflow: hidden;
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
   }
   .cell_box ul li img{
     display: block;
@@ -296,18 +294,24 @@ export default {
   }
   .cell_box ul li div{
     float: left;
+    width: 84.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   .cell_box ul li h5{
-    margin: 0 0 10px;
+    margin: 0;
     color: #444;
     font-size: 26px;
     font-weight: normal;
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .cell_box ul li p{
-    margin: 0;
     color: #777;
-    font-size: 24px;
-    text-align: center;
+    font-size: 22px;
   }
   .cell_box ul li p img{
     display: inline-block;
@@ -465,7 +469,7 @@ export default {
   }
 
 
-  /deep/ .mint-swipe-indicator{
+  #home /deep/ .mint-swipe-indicator{
     width: 16px;
     height: 16px;
     margin-right: 10px;
@@ -473,10 +477,10 @@ export default {
     background: rgba(255,255,255,.51);
     opacity: 1;
   }
-  /deep/ .mint-swipe-indicator:last-child{
+  #home /deep/ .mint-swipe-indicator:last-child{
     margin-right: 0;
   }
-  /deep/ .mint-swipe-indicator.is-active{
+  #home /deep/ .mint-swipe-indicator.is-active{
     background: rgba(255,255,255,1);
   }
 </style>
